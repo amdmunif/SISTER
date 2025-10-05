@@ -106,7 +106,7 @@ const CetakKartu: React.FC<CetakKartuProps> = ({ mode, siswaData = [], usersData
             <div id="print-area">
                 <div className="flex flex-row flex-wrap gap-x-[1cm] gap-y-[0.55cm]">
                     {filteredData.map((item: Siswa | User, index) => {
-                        const defaultPassword = isSiswaMode ? 'siswa@2025' : 'absen@spentik4';
+                        const defaultPassword = isSiswaMode ? 'xxx' : 'xxx';
                         // Create a new object with the default password for printing, leaving the original data unchanged
                         const itemToPrint = { ...item, password: defaultPassword };
                         return (
