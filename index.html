@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" id="favicon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SISTER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': '#007BFF',
+              'primary-dark': '#0056b3',
+              'secondary': '#6c757d',
+              'success': '#28a745',
+              'danger': '#dc3545',
+              'warning': '#ffc107',
+              'info': '#17a2b8',
+              'light': '#f8f9fa',
+              'dark': '#343a40',
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Add SheetJS (xlsx) for Excel import/export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- Add jsPDF and jspdf-autotable for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <style>
+      /* Responsive Table Styling */
+      @media (max-width: 767px) {
+        .table-stacked table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        .table-stacked thead {
+          display: none;
+        }
+        .table-stacked tr {
+          display: block;
+          margin-bottom: 1rem;
+          border: 1px solid #ddd;
+          border-radius: 0.5rem;
+          padding: 0.5rem;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .table-stacked td {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.75rem 0.5rem;
+          text-align: right;
+          border-bottom: 1px solid #eee;
+        }
+        .table-stacked td:last-child {
+          border-bottom: none;
+        }
+        .table-stacked td::before {
+          content: attr(data-label);
+          font-weight: bold;
+          text-align: left;
+          margin-right: 1rem;
+          color: #333;
+        }
+      }
+      /* Toast Animation */
+      @keyframes fade-in-right {
+        from {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .animate-fade-in-right {
+        animation: fade-in-right 0.3s ease-out forwards;
+      }
+      .break-inside-avoid {
+        break-inside: avoid;
+      }
+      @media print {
+        body * {
+            visibility: hidden;
+        }
+        .print-hide {
+            display: none !important;
+        }
+        #print-area, #print-area * {
+            visibility: visible;
+        }
+        #print-area {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+        @page {
+            size: A4;
+            margin: 1cm;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-100">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

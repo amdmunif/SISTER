@@ -1,0 +1,5 @@
+{
+  "name": "Sistem Absensi Harian Siswa SMP",
+  "description": "A comprehensive daily attendance system for junior high school students, designed for various user roles including Class Presidents, Guidance Counselors, Homeroom Teachers, Admins, and the Principal. It features attendance input, validation, monitoring, student data management with Excel import, and custom report generation with PDF/Excel export.",
+  "requestFramePermissions": []
+}
